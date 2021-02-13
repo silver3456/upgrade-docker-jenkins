@@ -1,0 +1,9 @@
+/.idea
+/.idea/**
+/*.iml.idea
+/target
+/target/**
+*.class
+/screenshots_failure/*
+/screenshots_success/*
+/allure-results/*

@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression API" verbose="1">
+    <test name="ApiTest">
+        <packages>
+            <package name="com.usa.web.api"/>
+        </packages>
+    </test>
+</suite>
