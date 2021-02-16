@@ -22,7 +22,7 @@ public class LoanPurposeTest extends TestRunner {
 
 
     @Test(testName = "testLoanPrequalificationForm")
-    public void testLoanPrequalificationForm() {
+    public void testLoanPrequalificationForm()  {
         LandingPage landingPage = new LandingPage(driver);
         landingPage.open(BASE_URL);
         landingPage.goToLoanPurposePage(2000, "Large Purchase");
@@ -34,7 +34,7 @@ public class LoanPurposeTest extends TestRunner {
         contactPage
                 .enterFirstName("Alex")
                 .enterLastName("Smith")
-                .enterHomeAddress("333 1st Street")
+                .enterHomeAddress("2227 Clement Street")
                 .enterCityName("San Francisco")
                 .enterState("CA")
                 .enterZipCode(94121)

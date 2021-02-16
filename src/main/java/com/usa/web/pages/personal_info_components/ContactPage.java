@@ -1,11 +1,17 @@
 package com.usa.web.pages.personal_info_components;
 
 import com.usa.web.pages.BasePage;
+import com.usa.web.selenium.utils.WaitUtil;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
+
+import static com.usa.web.selenium.utils.WaitUtil.Options.CLICKABLE;
+import static com.usa.web.selenium.utils.WaitUtil.Options.VISIBLE;
 
 public class ContactPage extends BasePage {
 
@@ -35,6 +41,9 @@ public class ContactPage extends BasePage {
     @FindBy(css = "button[type=submit]")
     private WebElement continueButton;
 
+    @FindBy(css = "ul.geosuggest__suggests")
+    private WebElement addressesList;
+
     private static final String PATTERN_ADDRESS = "//*[@class = 'geosuggest__item__matched-text']";
 
 
@@ -58,7 +67,9 @@ public class ContactPage extends BasePage {
 
     @Step("Enter home address")
     public ContactPage enterHomeAddress(String address) {
+        WaitUtil.waitForElementWithOption(driver, continueButton, CLICKABLE);
         helper.enterText(homeAddress, address);
+        WaitUtil.waitForElementWithOption(driver, addressesList, VISIBLE);
         driver.findElement(By.xpath((String.format(PATTERN_ADDRESS, address)))).click();
         return this;
     }
