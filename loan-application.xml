@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Loan-Application" verbose="1">
+    <test name="application-test">
+        <classes>
+            <class name="com.usa.web.selenium.LoanPurposeTest" />
+        </classes>
+    </test>
+</suite>
+
+
+<!--<suite name="Regression Web UI" verbose="1">-->
+    <!--<test name="LoanPurposeTest">-->
+        <!--<packages>-->
+            <!--<package name="com.usa.web.selenium"/>-->
+        <!--</packages>-->
+    <!--</test>-->
+<!--</suite>-->
