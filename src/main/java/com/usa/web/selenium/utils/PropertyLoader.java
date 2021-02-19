@@ -10,6 +10,8 @@ import java.util.Properties;
 public class PropertyLoader {
 
     private static Properties properties = loadProperties();
+
+
 //    private static Logger LOG = Logger.getLogger(PropertyLoader.class.getName());
 
     private static String getProperty(String key) {
@@ -30,15 +32,28 @@ public class PropertyLoader {
     }
 
 
-    private static Properties loadProperties() {
-        Properties prop = new Properties();
+//    private static Properties loadProperties() {
+//        Properties prop = new Properties();
+//
+//        try (InputStream input = new FileInputStream("application.properties")) {
+//            prop.load(input);
+//        } catch (IOException e) {
+////            LOG.info(e.getMessage());
+//        }
+//
+//        return prop;
+//    }
 
-        try (InputStream input = new FileInputStream("application.properties")) {
-            prop.load(input);
+    private  static Properties loadProperties() {
+        Properties properties = new Properties();
+        String file = "application.properties";
+        InputStream inputstream = PropertyLoader.class.getClassLoader().getResourceAsStream(file);
+        try {
+            properties.load(inputstream);
         } catch (IOException e) {
-//            LOG.info(e.getMessage());
+            e.printStackTrace();
         }
-
-        return prop;
+        return properties;
     }
+
 }

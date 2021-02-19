@@ -20,6 +20,9 @@ public class LoanPurposeTest extends TestRunner {
     private static final String BASE_URL = getBaseUrl();
     private static final String LOGIN_URL = getLoginUrl();
 
+//    private static final String baseUrl = "https://www.credify.tech/phone/nonDMFunnel";
+//    private static final String loginUrl = "https://www.credify.tech/portal/login";
+
 
     @Test(testName = "testLoanPrequalificationForm")
     public void testLoanPrequalificationForm()  {
