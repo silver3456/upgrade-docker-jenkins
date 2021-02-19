@@ -24,13 +24,13 @@ public class LandingPage extends BasePage {
     }
 
     public void open(String url) {
-        LOG.info("Open with url: " + url);
+//        LOG.info("Open with url: " + url);
         driver.get(url);
     }
 
     @Step("Enter loan amount and loan purpose, then click Check Your Rate button")
     public void goToLoanPurposePage(int amount, String loanPurpose) {
-        LOG.info("Navigate to Loan purpose page");
+//        LOG.info("Navigate to Loan purpose page");
         helper.enterText(loanAmount, String.valueOf(amount));
         selectLoanPurpose(loanPurpose);
         helper.clickOnElement(checkYourRateButton);

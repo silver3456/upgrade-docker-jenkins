@@ -1,8 +1,8 @@
 package com.usa.web.selenium;
 
 
-import com.usa.web.selenium.listeners.LogListener;
-import com.usa.web.selenium.supplier.DriverFactory;
+//import com.usa.web.selenium.listeners.LogListener;
+//import com.usa.web.selenium.supplier.DriverFactory;
 import com.usa.web.selenium.utils.CaptureScreenshots;
 import com.usa.web.selenium.utils.StringRandomGenerator;
 import io.qameta.allure.Attachment;
@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 import static com.usa.web.selenium.utils.PropertyLoader.getDefaultWait;
 
 
-@Listeners(value = {LogListener.class})
+//@Listeners(value = {LogListener.class})
 public class TestRunner {
     protected WebDriver driver;
 

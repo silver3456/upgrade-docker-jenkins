@@ -1,17 +1,18 @@
 package com.usa.web.selenium.utils;
 
-import org.apache.log4j.Logger;
-import org.openqa.selenium.*;
+//import org.apache.log4j.Logger;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import static java.lang.String.format;
 
 public class ElementHelper {
     private WebDriver driver;
-    private static Logger LOG = Logger.getLogger(ElementHelper.class.getName());
+//    private static Logger LOG = Logger.getLogger(ElementHelper.class.getName());
 
     public ElementHelper(WebDriver driver) {
         this.driver = driver;
@@ -19,20 +20,20 @@ public class ElementHelper {
 
 
     public void enterText(WebElement locator, String text) {
-        LOG.info(format("Clear and set text: %s to an element with locator: %s", text, locator));
+//        LOG.info(format("Clear and set text: %s to an element with locator: %s", text, locator));
         locator.clear();
         locator.sendKeys(text);
     }
 
 
     public void clickOnElement(WebElement locator) {
-        LOG.info("CLick on element with locator: " + locator);
+//        LOG.info("CLick on element with locator: " + locator);
         try {
             WebDriverWait wait = new WebDriverWait(driver, 5);
             wait.until(ExpectedConditions.elementToBeClickable(locator));
             locator.click();
         } catch (Exception ex) {
-            LOG.info(ex.getMessage());
+//            LOG.info(ex.getMessage());
         }
     }
 

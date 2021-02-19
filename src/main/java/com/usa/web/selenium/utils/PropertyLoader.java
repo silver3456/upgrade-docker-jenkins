@@ -1,6 +1,6 @@
 package com.usa.web.selenium.utils;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.util.Properties;
 public class PropertyLoader {
 
     private static Properties properties = loadProperties();
-    private static Logger LOG = Logger.getLogger(PropertyLoader.class.getName());
+//    private static Logger LOG = Logger.getLogger(PropertyLoader.class.getName());
 
     private static String getProperty(String key) {
         return properties.getProperty(key);
@@ -36,7 +36,7 @@ public class PropertyLoader {
         try (InputStream input = new FileInputStream("application.properties")) {
             prop.load(input);
         } catch (IOException e) {
-            LOG.info(e.getMessage());
+//            LOG.info(e.getMessage());
         }
 
         return prop;
