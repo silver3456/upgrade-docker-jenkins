@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Loan-Application" verbose="1">
+<suite name="Loan-Application" verbose="1" parallel="tests">
     <test name="testLoanPrequalificationForm">
         <classes>
             <class name="com.usa.web.selenium.LoanPurposeTest" />

@@ -23,16 +23,16 @@ import static com.usa.web.selenium.utils.PropertyLoader.getDefaultWait;
 public class TestRunner {
     protected WebDriver driver;
 
+/* To run locally
+    @BeforeClass
+    @Parameters("browser")
+    public void beforeSetUp(@Optional("chrome") String browser) {
+        this.driver = DriverFactory.getDriver(browser);
 
-//    @BeforeClass
-//    @Parameters("browser")
-//    public void beforeSetUp(@Optional("chrome") String browser) {
-//        this.driver = DriverFactory.getDriver(browser);
-//
-//        driver.manage().timeouts().implicitlyWait(getDefaultWait(), TimeUnit.SECONDS);
-//        driver.manage().window().maximize();
-//    }
-
+        driver.manage().timeouts().implicitlyWait(getDefaultWait(), TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+    }
+*/
 
     @BeforeClass
     public void setupDriver() throws MalformedURLException {
