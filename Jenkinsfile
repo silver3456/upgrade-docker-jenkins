@@ -1,4 +1,5 @@
 pipeline {
+    // master executor should be set to 0
     agent none
     stages {
         stage('Build Jar') {
@@ -9,24 +10,23 @@ pipeline {
                 }
             }
             steps {
-                sh 'mvn clean package -DskipTests'
+              
+                sh "mvn clean package -DskipTests"
             }
         }
         stage('Build Image') {
             steps {
-                script {
-                	app = docker.build("silver3456/upgrade-selenium-docker")
-                }
+                
+                sh "docker build -t='silver3456/upgrade-selenium-docker' ."
             }
         }
         stage('Push Image') {
             steps {
-                script {
-			        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-			            app.push("${BUILD_NUMBER}")
-			            app.push("latest")
-			        }
-                }
+			    withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {
+              
+			        sh "docker login --username=${user} --password=${pass}"
+			        sh "docker push silver3456/upgrade-selenium-docker:latest"
+			    }                           
             }
         }
     }
